@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Digital business card for Melissa Chalhoub, J.D. student at Rutgers Law School." />
+  <meta name="theme-color" content="#102f33" />
+  <title>Melissa Chalhoub — Digital Card</title>
+  <style>
+    :root{
+      --bg:#e9eef0;
+      --card:#f7f9f8;
+      --ink:#132427;
+      --muted:#65747a;
+      --line:#d6dfe1;
+      --accent:#2f6e67;
+      --accent-soft:#dce9e6;
+      --gold:#aa9061;
+      --shadow:0 24px 64px rgba(15,31,34,.12);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%}
+    body{
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      background:
+        radial-gradient(circle at 12% 14%, rgba(47,110,103,.09), transparent 30%),
+        radial-gradient(circle at 88% 85%, rgba(170,144,97,.07), transparent 28%),
+        var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+    }
+    .card{
+      width:min(560px,100%);
+      background:rgba(247,249,248,.96);
+      border:1px solid rgba(19,36,39,.10);
+      box-shadow:var(--shadow);
+      border-radius:22px;
+      padding:30px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      width:180px;height:180px;
+      right:-80px;top:-80px;
+      border:1px solid rgba(47,110,103,.18);
+      border-radius:50%;
+    }
+    .topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:28px;
+    }
+    .monogram{
+      width:46px;height:46px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:var(--ink);
+      color:#f4f7f6;
+      font-family:var(--serif);
+      font-size:18px;
+      letter-spacing:.04em;
+    }
+    .tag{
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--accent);
+      font-weight:700;
+    }
+    h1{
+      margin:0;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:clamp(42px,9vw,62px);
+      line-height:.95;
+      letter-spacing:-.035em;
+    }
+    .role{
+      margin:12px 0 2px;
+      font-size:15px;
+      font-weight:700;
+      color:var(--accent);
+    }
+    .school{
+      margin:0 0 24px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .leadership{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:15px 0;
+      display:grid;
+      gap:8px;
+      margin-bottom:20px;
+    }
+    .leadership div{
+      display:grid;
+      grid-template-columns:105px 1fr;
+      gap:12px;
+      align-items:baseline;
+    }
+    .leadership span{
+      color:var(--muted);
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+    }
+    .leadership strong{
+      font-size:12px;
+      font-weight:650;
+      line-height:1.35;
+    }
+    .education-note{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px 14px;
+      background:var(--accent-soft);
+      border-radius:12px;
+      margin-bottom:22px;
+      color:#385754;
+      font-size:11px;
+      line-height:1.45;
+    }
+    .education-note b{color:var(--ink)}
+    .actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      min-height:48px;
+      padding:0 15px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      color:var(--ink);
+      text-decoration:none;
+      font-size:12px;
+      font-weight:700;
+      transition:transform .18s ease,border-color .18s ease,background .18s ease;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:#b7c4c6}
+    .btn.primary{background:var(--ink);color:#f5f8f7;border-color:var(--ink)}
+    .btn svg{width:17px;height:17px;flex:0 0 auto}
+    .foot{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--muted);
+      font-size:9px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    @media (max-width:520px){
+      body{padding:14px}
+      .card{padding:24px;border-radius:18px}
+      .leadership div{grid-template-columns:86px 1fr}
+      .actions{grid-template-columns:1fr}
+      .foot{display:grid}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="Melissa Chalhoub digital business card">
+    <div class="topline">
+      <div class="monogram" aria-hidden="true">MC</div>
+      <div class="tag">Digital card</div>
+    </div>
+
+    <h1>Melissa<br>Chalhoub</h1>
+    <p class="role">J.D. Student · Rutgers Law School</p>
+    <p class="school">Law · international affairs · public service</p>
+
+    <section class="leadership" aria-label="Selected leadership">
+      <div><span>President</span><strong>International Law Society</strong></div>
+      <div><span>President</span><strong>National Lawyers Guild</strong></div>
+      <div><span>Representative</span><strong>Student Bar Association · 2L</strong></div>
+      <div><span>Program Director</span><strong>International Refugee Assistance Project</strong></div>
+      <div><span>Cultural Officer</span><strong>Middle East &amp; North Africa Law Student Association</strong></div>
+    </section>
+
+    <div class="education-note">
+      <span aria-hidden="true">◆</span>
+      <span><b>B.A. summa cum laude in Political Science</b><br>William Paterson University</span>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="mailto:mc3115@scarletmail.rutgers.edu">
+        <span>Email</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>
+      </a>
+      <a class="btn" href="https://linkedin.com/in/melissa-chalhoub-061640265" target="_blank" rel="noreferrer">
+        <span>LinkedIn</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 9v8"/><path d="M7 6.5v.01"/><path d="M11 17v-4.2a3 3 0 0 1 6 0V17"/><path d="M11 9v8"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+      </a>
+    </div>
+
+    <div class="foot">
+      <span>Rutgers Law School</span>
+      <span>Melissa Chalhoub</span>
+    </div>
+  </main>
+</body>
+</html>
